@@ -1,1 +1,6 @@
-@import "reset.sass"
+@import "./settings/reset";
+@import "./settings/_fonts";
+@import "./settings/_colors";
+body {
+    font-family: $font-base;
+}
