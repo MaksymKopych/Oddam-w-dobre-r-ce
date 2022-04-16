@@ -1,6 +1,214 @@
 @import "./settings/reset";
 @import "./settings/_fonts";
 @import "./settings/_colors";
+*{
+    text-decoration: none;
+}
+@mixin column-centr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 body {
     font-family: $font-base;
+}
+#root{
+    @include column-centr;
+}
+.contener{
+    width: 100%;
+    max-width: 1500px;
+    @include column-centr;
+    overflow: hidden;
+}
+.header{
+    padding: 50px 50px 0px 50px;
+    display: flex;
+
+    &-img{
+        display: flex;
+        width: 50%; 
+        position: relative;
+        left: -5%;
+
+    }
+    &-sections{
+        flex-grow: 1;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+.navbar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .login{
+        height: 36px;
+        display: flex;
+        justify-content: flex-end;
+
+        a{
+            font-size: 1rem;
+            padding: 10px 25px;
+            text-overflow: clip;
+            color: $color-steps;
+            &:hover{
+
+                box-shadow: inset 0px 0px 0px 3px $color-info;
+            }
+        }
+    }
+    .nav{
+        display: flex;
+        justify-content: flex-end;
+        ul{
+            min-width: 700px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+         a{
+             color: $color-text;
+                font-size: 1rem;
+                padding: 10px 30px ;
+            &:hover{
+
+                box-shadow: inset 0px 0px 0px 3px $color-nav;
+            }
+         }
+        }
+        
+    }
+}
+.home-main{
+    position: relative;
+    left: -10%;
+    font-size: 2rem;
+    margin-top: 70px;
+    @include column-centr();
+    &-text{
+        @include column-centr;
+        gap: 20px;
+        img{
+            width: 50%;
+        }
+    }
+    &-btns{
+        margin-top: 30px;
+        display:  flex;
+        gap: 20px;
+        button {
+            text-transform: uppercase;
+            line-height: 20px;
+            color: $color-steps;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            padding: 20px;
+            background: none;
+            border: 2px solid $color-steps;
+        }
+    }
+}
+.home-info{
+    display: flex;
+    background-color: $color-info;
+    padding: 50px;
+    justify-content: space-around;
+    align-items: center;
+    &-content {
+        width: 25%;
+        @include column-centr;
+        gap: 20px;
+        h2{
+            font-size: 2rem;
+        }
+        p:first-of-type{
+            
+            text-transform: uppercase;
+        }
+        p{
+            text-align: center;
+        }
+    }
+}
+.home-steps{
+    margin-top: 20px;
+    @include column-centr;
+    width: 100%;
+    &-text{
+        text-align: center;
+        h2{
+            font-size: 1.5rem;
+        }
+        img {
+            margin: 20px;
+            width: 50%;
+        }
+    }
+    &-instructions{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color1;
+        padding: 50px;
+        gap: 30px;
+        .instruction{
+            width: 200px;
+            text-align: center;
+            @include column-centr;
+            span {
+                border-bottom: 2px solid $color-steps;
+                width: 50%;
+                margin: 20px;
+            }
+        }
+    }
+    button {
+        margin: 20px 0 40px 0;
+        text-transform: uppercase;
+        line-height: 20px;
+        color: $color-steps;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        padding: 20px;
+        background: none;
+        border: 2px solid $color-steps;
+        
+    }
+}
+.home-about-us{
+    display: flex;
+    width: 100%;
+    &-text{
+        padding: 80px;
+        background-color: $color1;
+        h2{
+            color: $color-steps;
+            font-size: 2rem;
+        }
+        img:first-of-type {
+            margin: 20px
+        }
+        p{
+            color: $color-steps;
+            text-align: center;
+        }
+        .signature{
+            position: relative;
+            width: 30%;
+            right: -40%;
+            bottom: -40%;
+            transform: translate(-50%, -50%)
+        }
+        @include column-centr;
+    }
+    img{
+        width: 50%;
+    }
 }
