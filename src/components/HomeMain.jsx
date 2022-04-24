@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import decor from "../assets/Decoration.svg";
 export const HomeMain = () => {
   return (
@@ -9,7 +10,7 @@ export const HomeMain = () => {
         <img src={decor} alt="decor" />
       </div>
       <div className="home-main-btns">
-        <button>Oddaj Rzeczy</button>
+        <NavLink to="/login">Oddaj Rzeczy</NavLink>
         <button>Zorganizuj zbiórkę</button>
       </div>
     </div>

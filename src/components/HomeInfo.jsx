@@ -2,7 +2,7 @@ import React from "react";
 
 export const HomeInfo = () => {
   return (
-    <div className="home-info ">
+    <div className="home-info " id="info">
       <div className="home-info-content">
         <h2>10</h2>
         <p>Oddanych worków</p>

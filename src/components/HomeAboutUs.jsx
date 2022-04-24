@@ -3,7 +3,7 @@ import decor from "../assets/Decoration.svg";
 import signature from "../assets/Signature.svg";
 export const HomeAboutUs = () => {
   return (
-    <div className="home-about-us">
+    <div className="home-about-us" id="about">
       <div className="home-about-us-text">
         <h2>O nas</h2>
         <img src={decor} alt="decor" />

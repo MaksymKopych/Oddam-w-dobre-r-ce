@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import decor from "../assets/Decoration.svg";
 import dress from "../assets/Icon-1.svg";
 import bag from "../assets/Icon-2.svg";
@@ -38,7 +39,7 @@ export const HomeSteps = () => {
         </div>
       </div>
 
-      <button>Oddaj rzeczy</button>
+      <NavLink to="/login">Oddaj rzeczy</NavLink>
     </div>
   );
 };
