@@ -7,7 +7,7 @@ export const Logout = () => {
       <h1>Wylogowanie nastąpiło pomyślnie !</h1>
       <img src={decor} alt="decoration" />
 
-      <div className="login-form-btns">
+      <div className="logout-btn">
         <NavLink to="/">Strona glowna</NavLink>
       </div>
     </div>

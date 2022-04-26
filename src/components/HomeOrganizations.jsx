@@ -8,7 +8,8 @@ export const HomeOrganizations = () => {
         <h2>Komu pomagamy ?</h2>
         <img src={decor} alt="decor" />
       </div>
-      <div className="organizations-links"></div>
+      {/* <div className="organizations-links"></div> */}
+      <div className="slider"></div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 @import "./settings/reset";
 @import "./settings/_fonts";
 @import "./settings/_colors";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 *{
     text-decoration: none;
     box-sizing: border-box;
@@ -56,11 +58,15 @@ body {
     gap: 30px;
     .login{
         height: 36px;
+        gap: 20px;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
 
-        a{
-           
+        a, button{
+            cursor: pointer;
+           background: none;
+           border: none;
             font-size: 1rem;
             padding: 10px 25px;
             text-overflow: clip;
@@ -70,6 +76,13 @@ body {
                 box-shadow: inset 0px 0px 0px 3px $color-info;
             }
         }
+        p{
+            font-size: 1rem;
+            padding: 10px 25px;
+            text-overflow: clip;
+            color: $color-steps;
+        }
+       
     }
     .nav{
         display: flex;
@@ -308,15 +321,28 @@ body {
     h1{
         font-size: 2rem;
     }    
+    .logout-btn{
+        padding: 20px 0;
+
+        a{
+            color: $color-text;
+            background: none;
+            padding: 15px 30px;
+            border: none;
+            box-shadow: inset 0px 0px 0px 3px $color1;
+
+
+        }
+    }
 }
 .login-form{
     margin-top: 20px;
     width: 500px;
     @include column-centr;
-&-inputs{
-    width: 400px;
-    background-color: $color1;
-    padding: 20px;
+    &-inputs{
+         width: 400px;
+        background-color: $color1;
+        padding: 20px;
     div{
         display: flex;
         flex-direction: column;
@@ -344,9 +370,9 @@ body {
                 box-shadow: inset 0px 0px 0px 3px $color1;
                 cursor: pointer;
             }
-            
         }
     }
+
 }
 .home-footer{
     padding: 20px;
@@ -362,11 +388,13 @@ body {
     }
 }
 .home-organization{
-    // display: flex;
+    @include column-centr;
+    width: 100%;
     .heading{
         h2{
             font-size: 1.5rem;
         }
         @include column-centr;
     }
+    
 }
