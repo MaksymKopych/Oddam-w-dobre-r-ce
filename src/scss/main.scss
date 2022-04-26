@@ -264,8 +264,10 @@ body {
         filter: opacity(0.8);
     }
     form{
+        position: relative;
+        width: 530px;
         z-index: 2;
-        width: fit-content;
+        // width: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -273,24 +275,30 @@ body {
         gap: 20px;
         padding: 20px;
         h2{
-            font-size: 1.5rem;
-            // font-family: $font-alt;
+            font-size: 2rem;
+
         }
     }
     &-inputs{
         display: flex;
         justify-content: center;
         gap: 15px;
+        width: 100%;
+        
     }
     &-input{
+        
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        flex-grow: 1;
        
         input {
+            width: 100%;
+            padding-top: 10px;
             background: none;
             border: none;
-            padding: 10px;
+            // padding: 10px;
             border-bottom: 2px solid $color-steps;
         }
     }
@@ -304,14 +312,24 @@ body {
             width: 100%;
             background: none;
             border: none;
-            padding: 10px;
+            padding-top: 10px;
             border-bottom: 2px solid $color-steps;
         }
+    }
+    button {
+        position: absolute;
+        right: 40px;
+        bottom: -50px;
+        width: 150px;
+        height: 50px;
+        background:none;
+        border: 0.75px solid #3C3C3C;
+        cursor: pointer;
     }
 }
 
 .loginScreen{
-    margin-top: 100px;
+    // margin-top: 100px;
     padding: 50px;
     display: flex;
     flex-direction: column;

@@ -23,10 +23,10 @@ export const HomeContacts = () => {
             form="contactForm"
             name="massage"
             placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-          asperiores temporibus modi autem voluptatum, eaque maiores! Rerum ut
-          iure ratione, explicabo nam velit magnam maxime."
+          asperiores temporibus modi autem voluptatum, eaque maiores! "
           />
         </div>
+        <button>Wyślij</button>
       </form>
     </div>
   );
