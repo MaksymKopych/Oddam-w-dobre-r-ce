@@ -1,19 +1,19 @@
 import React from "react";
-import { HomeMain } from "./HomeMain";
+import backgroundImage from "../assets/Form-Hero-Image.jpg";
+import { HandOverMain } from "./HandOverMain";
 import { HomeNavbar } from "./HomeNavbar";
-import backgroundImage from "../assets/Home-Hero-Image.jpg";
-export const HomeHeader = () => {
+
+export const HandOverHeader = () => {
   return (
     <div
       className="header"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundPositionX: "-10%",
       }}
     >
       <HomeNavbar />
       <div className="header-sections">
-        <HomeMain />
+        <HandOverMain />
       </div>
     </div>
   );

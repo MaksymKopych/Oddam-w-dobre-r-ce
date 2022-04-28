@@ -21,10 +21,13 @@ body {
 #root{
     display: flex;
     flex-direction: column;
-    width: 1500px;
+    width: 100vw;
+    // min-width: 1900px;
+    // min-width: 1500px;
+    max-width: 1900px;
 }
 .contener{
-//    height: 100vh;
+    width: 100%;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -32,22 +35,15 @@ body {
 }
 .header{
     width: 100%;
-    height: 600px;
-    padding: 50px 0px 0px 0px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
-
-    &-img{
-        width: 50%;
-        // background-image: url(../assets/Home-Hero-Image.jpg);
-        // background-repeat: no-repeat;
-        // background-position: 75%; 
-        // background-size: cover;
-
-    }
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
     &-sections{
-        flex-grow: 1;
-        align-items: center;
+        display: flex;
+        padding: 50px;
+        padding: 100px 10% 100px 0;
         justify-content: flex-end;
     }
 }
@@ -88,7 +84,6 @@ body {
         display: flex;
         justify-content: flex-end;
         ul{
-            // min-width: 700px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -107,13 +102,12 @@ body {
         
     }
 }
-.home-main{
-    position: relative;
-    left: -10%;
+.main{
+    width: 670px;
     font-size: 2rem;
-    margin-top: 70px;
     @include column-centr();
     &-text{
+        text-align: center;
         @include column-centr;
         gap: 20px;
         img{
@@ -139,8 +133,38 @@ body {
             border: 2px solid $color-steps;
         }
     }
+    &-contener{
+        // padding: 20px;
+        // text-align: center;
+        @include column-centr;
+        margin: 20px;
+        color: #3c3c3c82;
+       
+    }
+    &-steps{
+        padding: 20px 0;
+        display: flex;
+        padding: 60px 0 0 0;
+        gap: 50px;
+        div{
+            position: relative;
+            margin: 20px;
+           @include column-centr;
+           
+        }
+        div::before{
+            position: absolute;
+            content: "";
+            width: 170px;
+            height: 170px;
+            border: 2px solid #3c3c3c82;
+            transform: rotate(45deg);
+
+        }
+    }
 }
 .home-info{
+    width: 100%;
     display: flex;
     background-color: $color-info;
     padding: 50px;
@@ -243,11 +267,11 @@ body {
 .home-contacts{
     position: relative;
     width: 100%;
-    height: 700px;
+    height: 1000px;
     background-image: url(../assets/Background-Contact-Form.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -393,8 +417,10 @@ body {
 
 }
 .home-footer{
-    padding: 20px;
-    position: relative;
+    bottom: 30px;
+    right: 0;
+    z-index: 1;
+    position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -482,5 +508,80 @@ body {
 
             }
         }
+    }
+}
+.hand-over-steps{
+    
+    width: 100%;
+}
+.hand-over-impotant{
+    height: 180px;
+    background-color: $color-info;
+    padding: 50px 140px;
+    h2{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    p{
+        padding-top: 20px;
+    }
+
+}
+.hand-over-form{
+    width: 100%;
+    min-height: 880px;
+    background-image: url("../assets/Background-Form.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 50px 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    // justify-content: space-between;
+    align-items: flex-start;
+    span{
+        color: $color-text;
+    }
+    button {
+        background: none;
+        border: 2px solid #3c3c3c82;
+        padding: 15px 40px;
+        font-size: 18px;
+    }
+    &-inputs{
+        display: flex;
+        flex-direction: column;
+       
+        p{
+            font-size: 2rem;
+            padding-bottom: 30px;
+        }
+        label{
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        input {
+            position: relative;
+       width:40px ;
+       height: 40px;
+            place-content: center;
+          }
+          input::before {
+              position: absolute;
+            content: "";
+            width: 39px;
+            height: 39px;
+            border: 1px solid rgb(112, 110, 110);
+            opacity: 0;
+            transition: 120ms transform ease-in-out;
+            background-color: $color-info;
+          }
+          
+          input:checked::before {
+            opacity: 1;
+          }
     }
 }

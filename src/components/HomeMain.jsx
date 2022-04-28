@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
+import { Context } from "../App";
 import decor from "../assets/Decoration.svg";
 export const HomeMain = () => {
+  const { auth } = useContext(Context);
+  const [user] = useAuthState(auth);
   return (
-    <div className="home-main">
-      <div className="home-main-text">
+    <div className="main">
+      <div className="main-text">
         <p>Zacznij pomagać!</p>
         <p> Oddaj niechciane rzeczy w zaufane ręce</p>
         <img src={decor} alt="decor" />
       </div>
-      <div className="home-main-btns">
-        <NavLink to="/login">Oddaj Rzeczy</NavLink>
+      <div className="main-btns">
+        {user ? (
+          <NavLink to="/oddaj-rzeczy">Oddaj Rzeczy</NavLink>
+        ) : (
+          <NavLink to="/login">Oddaj Rzeczy</NavLink>
+        )}
+
         <button>Zorganizuj zbiórkę</button>
       </div>
     </div>

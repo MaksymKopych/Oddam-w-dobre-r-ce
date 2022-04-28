@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { NavLink } from "react-router-dom";
+import { Context } from "../App";
 import decor from "../assets/Decoration.svg";
 import dress from "../assets/Icon-1.svg";
 import bag from "../assets/Icon-2.svg";
 import zoom from "../assets/Icon-3.svg";
 import arrows from "../assets/Icon-4.svg";
 export const HomeSteps = () => {
+  const { auth } = useContext(Context);
+  const [user] = useAuthState(auth);
   return (
     <div className="home-steps">
       <div className="home-steps-text">
@@ -38,8 +42,11 @@ export const HomeSteps = () => {
           <p>kurier przyjedzie w dogodnym termine</p>
         </div>
       </div>
-
-      <NavLink to="/login">Oddaj rzeczy</NavLink>
+      {user ? (
+        <NavLink to="/oddaj-rzeczy">Oddaj rzeczy</NavLink>
+      ) : (
+        <NavLink to="/login">Oddaj rzeczy</NavLink>
+      )}
     </div>
   );
 };

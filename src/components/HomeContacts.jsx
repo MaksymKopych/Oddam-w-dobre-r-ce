@@ -1,5 +1,6 @@
 import React from "react";
 import decor from "../assets/Decoration.svg";
+import { HomeFooter } from "./HomeFooter";
 
 export const HomeContacts = () => {
   return (
@@ -28,6 +29,7 @@ export const HomeContacts = () => {
         </div>
         <button>Wyślij</button>
       </form>
+      <HomeFooter />
     </div>
   );
 };
