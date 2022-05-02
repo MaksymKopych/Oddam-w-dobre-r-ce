@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Context } from "../App";
 import decor from "../assets/Decoration.svg";
+import { HomeNavbar } from "../components/HomeNavbar";
 
 export const Registration = () => {
   const { auth } = useContext(Context);
@@ -32,51 +33,54 @@ export const Registration = () => {
   };
 
   return (
-    <div className="loginScreen">
-      <h1>Zalóż konto</h1>
-      <img src={decor} alt="decoration" />
-      <form className="login-form" onSubmit={registr}>
-        <div className="login-form-inputs">
-          <div>
-            <label htmlFor="register-email">Email</label>
-            <input
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              name="register-email"
-              type="email"
-            />
+    <>
+      <HomeNavbar />
+      <div className="loginScreen">
+        <h1>Zalóż konto</h1>
+        <img src={decor} alt="decoration" />
+        <form className="login-form" onSubmit={registr}>
+          <div className="login-form-inputs">
+            <div>
+              <label htmlFor="register-email">Email</label>
+              <input
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                name="register-email"
+                type="email"
+              />
+            </div>
+            <div>
+              <label htmlFor="register-password">Haslo</label>
+              <input
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                name="register-password"
+                type="password"
+              />
+            </div>
+            <div>
+              <label htmlFor="register-password">Powtorz haslo</label>
+              <input
+                value={secondPassword}
+                onChange={(e) => {
+                  setSecondPassword(e.target.value);
+                }}
+                name="register-password"
+                type="password"
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="register-password">Haslo</label>
-            <input
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              name="register-password"
-              type="password"
-            />
-          </div>
-          <div>
-            <label htmlFor="register-password">Powtorz haslo</label>
-            <input
-              value={secondPassword}
-              onChange={(e) => {
-                setSecondPassword(e.target.value);
-              }}
-              name="register-password"
-              type="password"
-            />
-          </div>
-        </div>
 
-        <div className="login-form-btns">
-          <NavLink to="/login">Zaloguj się</NavLink>
-          <button>Zalóż konto</button>
-        </div>
-      </form>
-    </div>
+          <div className="login-form-btns">
+            <NavLink to="/login">Zaloguj się</NavLink>
+            <button>Zalóż konto</button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };

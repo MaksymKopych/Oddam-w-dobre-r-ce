@@ -9,7 +9,6 @@ import { HomeSteps } from "../components/HomeSteps";
 
 export const Home = () => {
   return (
-    // <div className="contener">
     <>
       <HomeHeader />
       <HomeInfo />
@@ -18,7 +17,5 @@ export const Home = () => {
       <HomeOrganizations />
       <HomeContacts />
     </>
-
-    // </div>
   );
 };

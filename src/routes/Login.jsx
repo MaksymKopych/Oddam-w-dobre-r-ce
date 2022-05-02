@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import decor from "../assets/Decoration.svg";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Context } from "../App";
+import { HomeNavbar } from "../components/HomeNavbar";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,38 +25,41 @@ export const Login = () => {
   };
 
   return (
-    <div className="loginScreen">
-      <h1>Zaloguj się</h1>
-      <img src={decor} alt="decoration" />
-      <form className="login-form" onSubmit={singIn}>
-        <div className="login-form-inputs">
-          <div>
-            <label htmlFor="login-email">Email</label>
-            <input
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-              name="login-email"
-              type="email"
-            />
+    <>
+      <HomeNavbar />
+      <div className="loginScreen">
+        <h1>Zaloguj się</h1>
+        <img src={decor} alt="decoration" />
+        <form className="login-form" onSubmit={singIn}>
+          <div className="login-form-inputs">
+            <div>
+              <label htmlFor="login-email">Email</label>
+              <input
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                name="login-email"
+                type="email"
+              />
+            </div>
+            <div>
+              <label htmlFor="login-password">Haslo</label>
+              <input
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                name="login-password"
+                type="password"
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="login-password">Haslo</label>
-            <input
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              name="login-password"
-              type="password"
-            />
-          </div>
-        </div>
 
-        <div className="login-form-btns">
-          <NavLink to="/registration">Zalóż konto</NavLink>
-          <button>Zaloguj się</button>
-        </div>
-      </form>
-    </div>
+          <div className="login-form-btns">
+            <NavLink to="/registration">Zalóż konto</NavLink>
+            <button>Zaloguj się</button>
+          </div>
+        </form>
+      </div>
+    </>
   );
 };

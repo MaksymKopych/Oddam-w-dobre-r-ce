@@ -48,6 +48,7 @@ body {
     }
 }
 .navbar{
+    width: 100%;
     padding: 40px 20px;
     display: flex;
     flex-direction: column;
@@ -147,6 +148,7 @@ body {
         padding: 60px 0 0 0;
         gap: 50px;
         div{
+            text-align: center;
             position: relative;
             margin: 20px;
            @include column-centr;
@@ -333,6 +335,7 @@ body {
         flex-direction: column;
         align-items: flex-start;
         textarea{
+            resize: none;
             width: 100%;
             background: none;
             border: none;
@@ -353,7 +356,7 @@ body {
 }
 
 .loginScreen{
-    // margin-top: 100px;
+    height: 100vh;
     padding: 50px;
     display: flex;
     flex-direction: column;
@@ -537,20 +540,44 @@ body {
     display: flex;
     flex-direction: column;
     gap: 100px;
-    // justify-content: space-between;
     align-items: flex-start;
+    h2{
+        font-size: 2rem;
+        font-weight: 600;
+    }
     span{
         color: $color-text;
     }
-    button {
-        background: none;
-        border: 2px solid #3c3c3c82;
-        padding: 15px 40px;
-        font-size: 18px;
+    &-info{
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        div{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            span{
+                font-size: 1.5rem;
+            }
+        }
     }
+    &-btns{
+        display: flex;
+        gap: 30px;
+        button, a {
+            color: $color-text;
+            background: none;
+            border: 2px solid #3c3c3c82;
+            padding: 15px 40px;
+            font-size: 18px;
+        }
+    }
+  
     &-inputs{
         display: flex;
         flex-direction: column;
+        gap: 10px;
        
         p{
             font-size: 2rem;
@@ -561,27 +588,92 @@ body {
             display: flex;
             align-items: center;
             gap: 20px;
+            span{
+                position: relative;
+                min-width:40px ;
+                min-height: 40px;
+                place-content: center;
+                border: 1px solid $color-text;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+            }
         }
-
-        input {
-            position: relative;
-       width:40px ;
-       height: 40px;
-            place-content: center;
+        
+        input[type="radio"] {
+            display: none;
           }
-          input::before {
-              position: absolute;
-            content: "";
-            width: 39px;
-            height: 39px;
-            border: 1px solid rgb(112, 110, 110);
-            opacity: 0;
-            transition: 120ms transform ease-in-out;
+          select{
+              padding: 10px 25px;
+              text-align: center;
+              color: $color-text;
+          }
+         
+          
+          input:checked+span {
             background-color: $color-info;
           }
-          
-          input:checked::before {
-            opacity: 1;
-          }
+    }
+    &-helpTo{
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    &-funds{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        input{
+            padding: 10px;
+        }
+        label{
+            font-weight: 600;
+        }
+    }
+    &-adres{
+        display: flex;
+        gap: 50px;
+    }
+    .adres, .date {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        gap: 30px;
+        h2{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        &-text{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            font-size: 1.5rem;
+            p{
+                font-size: 1.5rem;
+                padding: 0;
+                width: 100px;
+            }
+        }
+
+    }
+    .adres-inputs, .date-inputs{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        div{
+            display: flex;
+            justify-content: space-between;
+            label  {
+                font-size: 1.5rem;
+                max-width: 100px;
+            }
+            input, textarea {
+                width: 250px;
+                resize: none;
+                padding: 10px;
+            }
+        }
+       
     }
 }
