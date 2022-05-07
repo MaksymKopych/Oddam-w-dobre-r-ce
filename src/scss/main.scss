@@ -6,6 +6,7 @@
 *{
     text-decoration: none;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 @mixin column-centr {
     display: flex;
@@ -21,10 +22,11 @@ body {
 #root{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    // width: 100vw;
+    width: 1900px;
     // min-width: 1900px;
     // min-width: 1500px;
-    max-width: 1900px;
+    // max-width: 1900px;
 }
 .contener{
     width: 100%;
@@ -35,9 +37,10 @@ body {
 }
 .header{
     width: 100%;
+    height: 963px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: flex-end;
     background-repeat: no-repeat;
     background-size: 50% 100%;
     &-sections{
@@ -64,20 +67,22 @@ body {
             cursor: pointer;
            background: none;
            border: none;
-            font-size: 1rem;
             padding: 10px 25px;
             text-overflow: clip;
-            color: $color-steps;
+            font: normal normal normal 18px/24px Open Sans;
+            letter-spacing: 0px;
+            color: #3C3C3C;
             &:hover{
 
                 box-shadow: inset 0px 0px 0px 3px $color-info;
             }
         }
         p{
-            font-size: 1rem;
+
             padding: 10px 25px;
-            text-overflow: clip;
-            color: $color-steps;
+            font: normal normal normal 18px/24px Open Sans;
+            letter-spacing: 0px;
+            color: #3C3C3C;
         }
        
     }
@@ -91,9 +96,12 @@ body {
 
          a{
              color: $color-text;
-                font-size: 1rem;
+
                 padding: 10px 30px ;
                 white-space: nowrap;
+                font: normal normal normal 18px/24px Open Sans;
+                letter-spacing: 0px;
+                color: #3C3C3C;
             &:hover{
 
                 box-shadow: inset 0px 0px 0px 3px $color-nav;
@@ -104,13 +112,16 @@ body {
     }
 }
 .main{
-    width: 670px;
-    font-size: 2rem;
+    width: 674px;
+    height: 350px;
     @include column-centr();
     &-text{
         text-align: center;
         @include column-centr;
         gap: 20px;
+        font: normal normal normal 38px/55px Open Sans;
+        letter-spacing: -0.76px;
+        color: #3C3C3C;
         img{
             width: 50%;
         }
@@ -120,18 +131,18 @@ body {
         display:  flex;
         gap: 20px;
         button, a {
-            text-align: center;
-            font-size: 1rem;
             text-transform: uppercase;
-            line-height: 20px;
-            color: $color-steps;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 150px;
-            padding: 20px;
             background: none;
-            border: 2px solid $color-steps;
+            width: 310px;
+            height: 120px;
+            border: 0.75px solid #3C3C3C;
+            text-align: center;
+            font: normal normal 300 36px/45px Open Sans;
+            letter-spacing: 0px;
+            color: #3C3C3C;
         }
     }
     &-contener{
@@ -167,73 +178,100 @@ body {
 }
 .home-info{
     width: 100%;
+    height: 384px;
     display: flex;
     background-color: $color-info;
     padding: 50px;
     justify-content: space-around;
     align-items: center;
     &-content {
-        width: 25%;
-        @include column-centr;
-        gap: 20px;
+        width: 334px;
+        height: 252px;
         h2{
-            font-size: 2rem;
+            text-align: center;
+            font: normal normal 300 90px/122px Open Sans;
+            letter-spacing: 0px;
+            color: #5E5322;
         }
         p:first-of-type{
-            
-            text-transform: uppercase;
-        }
-        p{
             text-align: center;
+            text-transform: uppercase;
+            font: normal normal normal 18px/30px Open Sans;
+            letter-spacing: -0.36px;
+            color: #3C3C3C;
+        }
+        p:nth-of-type(2){
+            margin-top: 28px;
+            text-align: center;
+            font: normal normal 300 16px/18px Merriweather;
+            letter-spacing: -0.32px;
+            color: #3C3C3C;
         }
     }
 }
 .home-steps{
-    margin-top: 20px;
     @include column-centr;
     width: 100%;
+    height: 624px;
+    padding-top: 55px;
     &-text{
         text-align: center;
         h2{
-            font-size: 1.5rem;
+            text-align: center;
+            font: normal normal normal 38px/55px Open Sans;
+            letter-spacing: -0.76px;
+            color: #3C3C3C;
         }
         img {
             margin: 20px;
-            width: 50%;
         }
     }
     &-instructions{
         width: 100%;
+        height: 325px;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: $color1;
+        background: #F0F1F1 0% 0% no-repeat padding-box;
         padding: 50px 0;
-        gap: 30px;
+        gap: 172px;
         .instruction{
-            width: 200px;
+            width: 160px;
+            height: 172px;
             text-align: center;
             @include column-centr;
+            
+            p:first-of-type{
+                padding: 8px;
+                text-align: center;
+                font: normal normal normal 18px/14px Open Sans;
+                color: #3C3C3C;
+            }
+            p:nth-of-type(2){
+                padding: 8px;
+                text-align: center;
+                font: normal normal normal 16px/14px Open Sans;
+                color: #3C3C3C;
+            }
             span {
                 border-bottom: 2px solid $color-steps;
-                width: 50%;
-                margin: 20px;
+                width: 70px;
+                margin: 8.5px;
             }
         }
     }
     a {
-        text-align: center;
-        margin: 20px 0 40px 0;
+        margin: 35px 0 80px 0;
         text-transform: uppercase;
-        line-height: 20px;
-        color: $color-steps;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 20px;
+        text-align: center;
+        font: normal normal 300 36px/45px Open Sans;
+        letter-spacing: 0px;
+        color: #3C3C3C;
         background: none;
-        border: 2px solid $color-steps;
-        
+        width: 310px;
+        border: 0.75px solid #3C3C3C;
+        // display: table-caption;
     }
 }
 .home-about-us{
@@ -541,6 +579,7 @@ body {
     flex-direction: column;
     gap: 100px;
     align-items: flex-start;
+    justify-content: center;
     h2{
         font-size: 2rem;
         font-weight: 600;
@@ -565,12 +604,13 @@ body {
     &-btns{
         display: flex;
         gap: 30px;
-        button, a {
+        button {
             color: $color-text;
             background: none;
             border: 2px solid #3c3c3c82;
             padding: 15px 40px;
             font-size: 18px;
+            cursor: pointer;
         }
     }
   
@@ -675,5 +715,22 @@ body {
             }
         }
        
+    }
+}
+.success{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 628px;
+height: 100%;
+    p{
+        font: normal normal 300 40px/55px Open Sans;
+        letter-spacing: -0.8px;
+        color: #3C3C3C;
+    }
+    img{
+        margin-top: 25px;
     }
 }

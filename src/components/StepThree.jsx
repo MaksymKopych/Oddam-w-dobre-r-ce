@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Context } from "../App";
 
 export const StepThree = () => {
-  const { handOverForm, setHandOverForm } = useContext(Context);
+  const { handOverForm, setHandOverForm, setStep } = useContext(Context);
 
   return (
     <>
@@ -96,13 +96,25 @@ export const StepThree = () => {
         />
       </div>
       <div className="hand-over-form-btns">
-        <NavLink to="oddaj-rzeczy-2">Wstecz</NavLink>
+        <button
+          onClick={() => {
+            setStep(2);
+          }}
+        >
+          Wstecz
+        </button>
         {handOverForm.location &&
         handOverForm.helpTo &&
         handOverForm.fund.length ? (
-          <NavLink to="oddaj-rzeczy-4">Dalej</NavLink>
+          <button
+            onClick={() => {
+              setStep(4);
+            }}
+          >
+            Dalej
+          </button>
         ) : (
-          <a href={false}>Dalej</a>
+          <button disabled>Dalej</button>
         )}
       </div>
     </>

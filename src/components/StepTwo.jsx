@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import { Context } from "../App";
 
 export const StepTwo = () => {
-  const { handOverForm, setHandOverForm } = useContext(Context);
+  const { handOverForm, setHandOverForm, setStep } = useContext(Context);
 
   return (
     <>
@@ -30,12 +29,24 @@ export const StepTwo = () => {
         </label>
       </div>
       <div className="hand-over-form-btns">
-        <NavLink to="oddaj-rzeczy">Wstecz</NavLink>
+        <button
+          onClick={() => {
+            setStep(1);
+          }}
+        >
+          Wstecz
+        </button>
 
         {handOverForm.count ? (
-          <NavLink to="oddaj-rzeczy-3">Dalej</NavLink>
+          <button
+            onClick={() => {
+              setStep(3);
+            }}
+          >
+            Dalej
+          </button>
         ) : (
-          <a href={false}>Dalej</a>
+          <button disabled>Dalej</button>
         )}
       </div>
     </>

@@ -6,6 +6,7 @@ import { Login } from "./Login";
 import { Logout } from "./Logout";
 import { HandOver } from "./HandOver";
 import { Registration } from "./Registration";
+
 export const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -20,5 +21,7 @@ export const AppRouter = () => {
         </Switch>
       </div>
     </BrowserRouter>
+
+
   );
 };

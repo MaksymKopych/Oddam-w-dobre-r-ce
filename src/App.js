@@ -12,12 +12,9 @@ export const Context = createContext();
 
 function App() {
   return (
-    // <BrowserRouter>
     <Context.Provider value={{ auth }}>
       <AppRouter />
     </Context.Provider>
-
-    // {/* </BrowserRouter> */}
   );
 }
 

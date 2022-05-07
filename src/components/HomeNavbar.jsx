@@ -18,6 +18,7 @@ export const HomeNavbar = () => {
         // An error happened.
       });
   };
+  // console.log(window.location.href.toString());
   return (
     <div className="navbar">
       {user ? (

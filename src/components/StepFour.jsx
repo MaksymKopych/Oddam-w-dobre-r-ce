@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Context } from "../App";
 
 export const StepFour = () => {
-  const { adres, setAdres, handOverForm, setHandOverForm } =
+  const { adres, setAdres, handOverForm, setHandOverForm, setStep } =
     useContext(Context);
 
   return (
@@ -30,13 +30,13 @@ export const StepFour = () => {
               </div>
 
               <div>
-                <label htmlFor="sity">Miasto</label>
+                <label htmlFor="city">Miasto</label>
                 <input
-                  name="sity"
+                  name="city"
                   type="text"
                   form="handOver"
                   onChange={(e) => {
-                    setAdres({ ...adres, sity: e.target.value });
+                    setAdres({ ...adres, city: e.target.value });
                   }}
                 />
               </div>
@@ -107,23 +107,29 @@ export const StepFour = () => {
       </div>
 
       <div className="hand-over-form-btns">
-        <NavLink to="oddaj-rzeczy-3">Wstecz</NavLink>
+        <button
+          onClick={() => {
+            setStep(3);
+          }}
+        >
+          Wstecz
+        </button>
         {adres.street &&
-        adres.sity &&
+        adres.city &&
         adres.postCode &&
         adres.phone &&
         adres.date &&
         adres.time ? (
-          <NavLink
+          <button
             onClick={() => {
               setHandOverForm({ ...handOverForm, adres: adres });
+              setStep(5);
             }}
-            to="oddaj-rzeczy-5"
           >
             Dalej
-          </NavLink>
+          </button>
         ) : (
-          <a href={false}>Dalej</a>
+          <button disabled>Dalej</button>
         )}
       </div>
     </>

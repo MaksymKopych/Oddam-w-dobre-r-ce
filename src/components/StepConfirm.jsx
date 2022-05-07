@@ -8,7 +8,7 @@ import dress from "../assets/Icon-1.svg";
 
 import arrow from "../assets/Icon-4.svg";
 export const StepConfirm = () => {
-  const { handOverForm, setHandOverForm } = useContext(Context);
+  const { handOverForm, setHandOverForm, setStep } = useContext(Context);
   //   const { auth } = useContext(Context);
   //   const [user] = useAuthState(auth);
   //   const postMethod = async (e) => {
@@ -77,8 +77,15 @@ export const StepConfirm = () => {
         </div>
       </div>
       <div className="hand-over-form-btns">
-        <NavLink to="/oddaj-rzeczy-4">Wstecz</NavLink>
         <button
+          onClick={() => {
+            setStep(4);
+          }}
+        >
+          Wstecz
+        </button>{" "}
+        <button
+          type="submit"
           style={{
             cursor: "pointer",
           }}

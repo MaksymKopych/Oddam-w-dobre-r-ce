@@ -1,15 +1,19 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import React, { useContext, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Context } from "../App";
 import decor from "../assets/Decoration.svg";
 import { HomeNavbar } from "../components/HomeNavbar";
-
 export const Registration = () => {
   const { auth } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [secondPassword, setSecondPassword] = useState("");
+  let history = useHistory();
   const registr = (e) => {
     e.preventDefault();
     if (password === secondPassword && email) {
@@ -17,10 +21,22 @@ export const Registration = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
+          signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+              // Signed in
+              const user = userCredential.user;
+              history.push("/");
+              // ...
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+            });
+
           setEmail("");
           setPassword("");
           setSecondPassword("");
-          window.location.href = "/login";
+          //TODO login
         })
         .catch((error) => {
           const errorCode = error.code;

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import decor from "../assets/Decoration.svg";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Context } from "../App";
@@ -9,13 +9,14 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const { auth } = useContext(Context);
   // const [user] = useAuthState(auth);
+  let history = useHistory();
   const singIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        window.location.href = "/";
+        history.push("/");
         // ...
       })
       .catch((error) => {

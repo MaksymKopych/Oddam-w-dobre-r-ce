@@ -7,8 +7,8 @@ export const HomeHeader = () => {
     <div
       className="header"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundPositionX: "-10%",
+        background: ` transparent url(${backgroundImage}) 0% 0% no-repeat padding-box `,
+        backgroundPosition: "-483px",
       }}
     >
       <HomeNavbar />
