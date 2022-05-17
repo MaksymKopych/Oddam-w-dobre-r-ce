@@ -43,9 +43,13 @@ export const HomeSteps = () => {
         </div>
       </div>
       {user ? (
-        <NavLink to="/oddaj-rzeczy">Oddaj rzeczy</NavLink>
+        <NavLink to="/oddaj-rzeczy">
+          Oddaj<br></br>rzeczy
+        </NavLink>
       ) : (
-        <NavLink to="/login">Oddaj rzeczy</NavLink>
+        <NavLink to="/login">
+          Oddaj<br></br>rzeczy
+        </NavLink>
       )}
     </div>
   );

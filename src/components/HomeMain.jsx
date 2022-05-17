@@ -15,9 +15,13 @@ export const HomeMain = () => {
       </div>
       <div className="main-btns">
         {user ? (
-          <NavLink to="/oddaj-rzeczy">Oddaj Rzeczy</NavLink>
+          <NavLink to="/oddaj-rzeczy">
+            Oddaj<br></br>Rzeczy
+          </NavLink>
         ) : (
-          <NavLink to="/login">Oddaj Rzeczy</NavLink>
+          <NavLink to="/login">
+            Oddaj<br></br>Rzeczy
+          </NavLink>
         )}
 
         <button>Zorganizuj zbiórkę</button>

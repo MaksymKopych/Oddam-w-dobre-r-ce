@@ -135,14 +135,14 @@ export const HomeOrganizations = () => {
               setItem(item2);
             }}
           >
-            Organizacjom pozarządowym
+            Organizacjom<br></br>pozarządowym
           </button>
           <button
             onClick={() => {
               setItem(item3);
             }}
           >
-            Lokalnym zbiórkom
+            Lokalnymbr<br></br>zbiórkom
           </button>
         </div>
         <div className="item">{item}</div>

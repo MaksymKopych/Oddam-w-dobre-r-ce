@@ -18,6 +18,7 @@ export const StepTwo = () => {
             onChange={(e) => {
               setHandOverForm({ ...handOverForm, count: e.target.value });
             }}
+            value={handOverForm.count}
           >
             <option value="">— wybierz —</option>
             <option value="1">1</option>

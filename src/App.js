@@ -4,6 +4,7 @@ import { createContext } from "react";
 import { initializeApp } from "@firebase/app";
 import { firebaseConfig } from "./utils/firebase";
 import { getFirestore } from "firebase/firestore";
+import { Login } from "./routes/Login";
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);

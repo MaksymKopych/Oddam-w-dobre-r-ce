@@ -23,7 +23,7 @@ export const HandOverSteps = () => {
   });
   const [handOverForm, setHandOverForm] = useState({
     things: "",
-    count: "",
+    count: "— wybierz —",
     location: "",
     helpTo: "",
     fund: "",
@@ -36,7 +36,7 @@ export const HandOverSteps = () => {
       setStep(6),
       setHandOverForm({
         things: "",
-        count: "",
+        count: "— wybierz —",
         location: "",
         helpTo: "",
         fund: "",
